@@ -1,8 +1,12 @@
 #coding:utf-8
 
-import rootme
 import sys
 import colorama
+import subprocess
+
+from core import rootme
+from core import color
+from core import helper
 
 class Optionnal:
 	def __init__(self):
@@ -18,11 +22,24 @@ class Optionnal:
 		self.MACH  = rootme.MACH
 		self.POINT = rootme.POINT
 
+        def call_informations(self):
+            '''
+                it's basic informations
+                on the function and print the information.
+            '''
+            if(self.USER == None):
+                helper.help()
+
+            if(self.USER != None):
+                print color.G + "\n[+] User : %s" %(self.USER)
+                print color.G + "[+] URL : https://www.root-me.org/%s\n" %(self.USER)
+
 	def __str__(self):
 		'''
 			Here we will test our variables
 			and go the necessary functions.
 		'''
+
 		if(self.LANG != None):
 			sys.exit(rootme.PollersLangs())
 
@@ -46,3 +63,8 @@ class Optionnal:
 
 		elif(self.MACH != None):
 			sys.exit(rootme.PollersMachines())
+
+if __name__ == "__main__":
+	q = Optionnal()
+	q.call_informations()
+	q.__str__()
