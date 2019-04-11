@@ -9,8 +9,8 @@ parser.add_option("-l", "--lang", dest="lang", action="store_true", help="See th
 parser.add_option("-c", "--chatbox", dest="chatbox", action="store_true", help="See the number of chatboxes posted.")
 parser.add_option("-s", "--status", dest="status", action="store_true", help="See the status of the user")
 parser.add_option("-p", "--point", dest="point", action="store_true")
+parser.add_option("-m", "--machines", dest="machines", action="store_true")
 parser.add_option("-C", "--Challenge", dest="Challenge")
-parser.add_option("-m", "--machines", dest="machines")
 (options, args) = parser.parse_args()
 
 PollersUser   = options.user
