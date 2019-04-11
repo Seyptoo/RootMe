@@ -3,7 +3,7 @@
 from optparse import *
 from threading import *
 
-parser = OptionParser()
+parser = OptionParser(add_help_option=False)
 parser.add_option("-u", "--user", dest="user", help="Enter the user.")
 parser.add_option("-l", "--lang", dest="lang", action="store_true", help="See the user's language.")
 parser.add_option("-c", "--chatbox", dest="chatbox", action="store_true", help="See the number of chatboxes posted.")
