@@ -6,6 +6,7 @@ import re
 import options
 import time
 import bs4 as BeautifulSoup
+
 from core import color
 
 # This is the url of the website.
@@ -57,7 +58,7 @@ def PollersPoint():
 	if(type(ModelSpan) == list and len(ModelSpan) != 0):
 		BertModel = ModelSpan[0] # Take the first.
 		BertModel = re.findall("[0-9]", BertModel)
-	print(color.Y + "[+] Point of "+USER+" : "+"".join(BertModel))
+	print(color.Y + "[+] Point of "+USER+" : "+"".join(BertModel)) + "\n"
 
 @PollersUsers
 def PollersLangs():
@@ -79,7 +80,7 @@ def PollersLangs():
 			sys.exit(e)
 
 	# He will leave the program with this command.
-	print(color.Y + "[+] Lang of the user : %s" %(RegexOnline))
+	print(color.Y + "[+] Lang of the user : %s\n" %(RegexOnline))
 
 @PollersUsers
 def PollersChatBox():
@@ -95,7 +96,7 @@ def PollersChatBox():
 		service_chatbox = "".join(service_chatbox)
 
 	# He will leave the program with this command.
-	print(color.Y + "[+] ChatBox of the user : %s" %(service_chatbox))
+	print(color.Y + "[+] ChatBox of the user : %s\n" %(service_chatbox))
 
 @PollersUsers
 def PollersStatus():
@@ -112,7 +113,7 @@ def PollersStatus():
 		StatusRegex = RegexStatus.replace("</li>", "")
 
 	# He will leave the program with this command.
-	print(color.Y + "[+] Status of the user : %s" %(StatusRegex))
+	print(color.Y + "[+] Status of the user : %s\n" %(StatusRegex))
 
 '''
 	his part will correspond
@@ -164,7 +165,7 @@ def PollersChallenge():
 			print(color.R+"[-] %s : Not Owned" %(NameChallenge))
 
 @PollersUsers
-def PollersCapture():
+def PollersMachines():
 	'''
 		This function will see if the
 		ctf boxs have been hacked
@@ -184,8 +185,9 @@ def PollersCapture():
 			redirect_output = (color.R + redirect_machines + " Not Owned")
 		elif('/valide.png' in redirect_searchs):
 			redirect_output = (color.Y + redirect_machines + " Owned")
+			
+		redirect_output = redirect_output.replace( '<td>', '')
+		redirect_output = redirect_output.replace('</td>', '')
 
 		print redirect_output
-
-if __name__ == "__main__":
-    pass
+		
