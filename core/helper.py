@@ -7,7 +7,8 @@ def help():
     print "\t[-l/--lang] | See the language."
     print "\t[-c/--chatbox] | See the numbers of chatboxes posted."
     print "\t[-s/--status] | See the status of the user."
-    print "\t[-p/--point] | See the point of the user.\n"
+    print "\t[-p/--point] | See the point of the user."
+		print "\t[-m/--machines] | See the machines owned of the user.\n"
 
     print "[Challenge] :"
     print "\t[-C/--Challenge] | See the challenge owned or not."
